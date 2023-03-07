@@ -1,0 +1,18 @@
+// {type:class}
+// {direction:topDown}
+
+// classes
+// classe inteface Target
+[<<Target>>|+Target();+Request(): const virtual std::string;]
+// class Adaptee
+[Adaptee|+SpecificRequest():const std::string Adaptee]
+// class Adapter
+[Adapter|+Adapter();+Request:const override std::string Adapter]
+
+// inherithms
+// client use the Target class
+[note: Client Code]<-[<<Target>>]
+// Adapter implementa  a classe interface
+[<<Target>>]<-.-[Adapter]
+// Adapter herda de adaptee
+[Adapter]->[Adaptee]

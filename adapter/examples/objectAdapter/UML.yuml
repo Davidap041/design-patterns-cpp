@@ -1,0 +1,21 @@
+// {type:class}
+// {direction:topDown}
+// {generate:true}
+
+
+// classes
+[Adapter|-*adptee_: Adaptee| +Adapter(*adptee:Adaptee): adaotee_(adaptee); +Request(): const override std::string ]
+
+[<<Target>>|+Target();+Request(): const virtual std::string Target ]
+[Adaptee|+Adaptee();+SpecificRequest(): const std::string Adaptee;]
+
+
+// dependences
+[<<Target>>]^-.- implements[Adapter] 
+
+[Adapter]uses -.->[Adaptee]
+
+[note:client Code]-[<<Target>>]
+
+
+ 
